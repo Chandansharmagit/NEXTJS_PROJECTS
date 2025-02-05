@@ -1,0 +1,189 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ///// HORIZONTAL SCROLL ///// */
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    overscroll-behavior-y: none;
+}
+
+body {
+    overflow-x: hidden;
+    background: #000;
+}
+
+h2 {
+    font-size: 5rem;
+    margin-bottom: 1rem; /* Ensure there's space between the heading and paragraph */
+}
+
+p {
+    font-size: 1.5rem;
+    margin: 0; /* Remove margin to prevent unnecessary spacing */
+}
+
+ h2 {
+    color: white;
+}
+
+/* //editing the main text  */
+
+.habits_text{
+    font-size: 4rem;
+    font-weight: bold;
+    margin-left: 4rem;
+    color: #c6c3c3;
+    
+}
+
+#container {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    /* Full height of viewport */
+    width: 500vw;
+    /* Ensuring horizontal scroll across sections */
+}
+
+.section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    align-items: center; /* Center vertically */
+    position: relative;
+    color: white;
+    font-family: rubik, sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    text-align: left; /* Align text to the left */
+    padding-left: 5vw; /* Add some padding to avoid touching the left edge */
+    overflow: hidden;
+}
+
+.section .content {
+    width: 60%;
+    /* Take up 60% of the space for text */
+    padding: 20px;
+    color: white;
+    font-size: 2rem;
+    position: relative;
+    z-index: 2;
+    /* Make sure text stays on top */
+    opacity: 0;
+    /* Initially hidden */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align text vertically to the top */
+    text-align: left; /* Align the text to the left */
+}
+
+.section .image {
+    width: 40%;
+    /* Smaller width for the image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    z-index: 1;
+    position: relative;
+}
+
+.section .image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay with transparency */
+    z-index: 2;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1s ease-out; /* Smooth reveal of the shadow */
+}
+
+/* Section specific background images */
+.one .image {
+    width: 70%;
+    height: 70%;
+    background-image: url(https://static.wixstatic.com/media/0acb7a_dab57bfa5e874a3283d3585e0a113a5b~mv2_d_8000_5340_s_4_2.jpg/v1/fill/w_980,h_654,al_c,q_85,usm_0.66_1.00_0.01/0acb7a_dab57bfa5e874a3283d3585e0a113a5b~mv2_d_8000_5340_s_4_2.jpg);
+}
+
+.two .image {
+    width: 70%;
+    height: 70%;
+    background-image: url(https://wallpapers.com/images/hd/4k-programming-black-coding-screen-38pddkr8zg8fzd1o.jpg);
+}
+
+.three .image {
+    width: 70%;
+    height: 70%;
+    background-image: url(https://wallpaperaccess.com/full/834264.jpg);
+}
+
+.four .image {
+    width: 70%;
+    height: 70%;
+    background-image: url(https://th.bing.com/th/id/OIP.UE-PAPMnnK9e1yoIs6jTNQAAAA?w=300&h=300&rs=1&pid=ImgDetMain);
+}
+
+.five .image {
+    width: 70%;
+    height: 70%;
+    background-image: url(https://srkkajol.com/wp-content/uploads/2022/09/a9b8a869b14f79d3bc3d371a87183ee4.jpg);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .section {
+        font-size: 1.5rem;
+        width: 100vw;
+        background-size: contain;
+        /* Ensure the background image scales nicely */
+        background-position: center;
+    }
+
+    .section .content {
+        width: 70%;
+        /* Adjust text width */
+        font-size: 1.5rem;
+    }
+
+    .section .image {
+        width: 30%;
+        /* Adjust image width */
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        font-size: 1rem;
+    }
+
+    .section .content {
+        font-size: 1rem;
+    }
+
+    .section .image {
+        width: 100%;
+        /* Stack image below text */
+        height: 300px;
+        /* Limit height for small screens */
+    }
+}
+
+.main-title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: left;
+  padding: 2rem;
+  color: #333;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}

@@ -1,0 +1,207 @@
+.container {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  margin-left: 20vw;
+ 
+  padding: 2rem;
+  align-items: center;
+  position: relative;
+  backdrop-filter: blur(8px);
+
+}
+
+.imageSection {
+  flex: 1;
+  position: relative;
+}
+
+.coffeeSymbol {
+  font-size: 3rem;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  z-index: 2;
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.imageText {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  margin: 0;
+}
+
+.form {
+  flex: 1;
+  
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.title {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.inputGroup {
+  margin-bottom: 1.5rem;
+}
+
+.input, .textarea {
+  width: 100%;
+  padding: 1rem;
+  color: #000;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus, .textarea:focus {
+  border-color: #8b4513;
+  outline: none;
+}
+
+.textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.button {
+  width: 100%;
+  padding: 1rem;
+  background: #8b4513;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background: #693109;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  
+  .imageSection, .form {
+    width: 100%;
+  }
+}
+
+.coffeeSection {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.coffeeCup {
+  width: 100px;
+  height: 120px;
+  background: #fff;
+  border: 4px solid #333;
+  border-radius: 0 0 50px 50px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.liquid {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(45deg, #6f4e37, #8b5e3c);
+  transition: height 0.3s ease;
+}
+
+.steam {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  text-align: center;
+}
+
+.steamWave {
+  font-size: 20px;
+  color: #8b5e3c;
+  opacity: 0;
+  animation: steam 2s infinite;
+  position: absolute;
+}
+
+@keyframes steam {
+  0% { transform: translateY(0); opacity: 0; }
+  50% { opacity: 0.8; }
+  100% { transform: translateY(-20px); opacity: 0; }
+}
+
+.button {
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.button.ready {
+  opacity: 1;
+  background: #6f4e37;
+  transform: scale(1.05);
+}
+
+.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.progressText{
+  color: white;
+}
+
+.topText {
+  text-align: left;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  font-weight: bold;
+  padding-left: 20vw;
+  position: relative;
+  display: inline-block;
+}
+
+.topText::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  bottom: -8px;
+  left: 20vw;
+  background-color: white;
+  transition: width 0.3s ease-in-out;
+} 
