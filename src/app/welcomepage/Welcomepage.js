@@ -44,6 +44,9 @@ const Welcomepage = ({ onComplete }) => {
       }
     })
 
+
+  
+
     // Initial container animation with blur effect
     tl.fromTo(containerRef.current,
       { 
